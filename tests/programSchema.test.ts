@@ -4,8 +4,9 @@ import { validatePrograms } from "@/data/programSchema";
 
 describe("program dataset schema", () => {
   it("accepts the canonical seed dataset", () => {
-    expect(validatePrograms(programs)).toHaveLength(3);
+    expect(validatePrograms(programs)).toHaveLength(11);
     expect(programs.find((program) => program.id === "gatech-oms-analytics")?.totalTuitionUsd).toBe(12348);
+    expect(programs.find((program) => program.id === "purdue-mscs-online")?.fundingTypes).toEqual(["Scholarship Available", "TA/RA Funding"]);
   });
 
   it("accepts a program without a national rank", () => {

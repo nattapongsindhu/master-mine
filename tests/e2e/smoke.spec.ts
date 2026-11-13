@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const TOTAL_PROGRAMS = 3;
+const TOTAL_PROGRAMS = 11;
 const FAVORITES_KEY = "masterpath-favorites";
 
 async function readSummary(page: Page) {
@@ -20,7 +20,7 @@ test.beforeEach(async ({ page }) => {
 test("discipline filter narrows the program list", async ({ page }) => {
   await page.getByRole("checkbox", { name: "Cybersecurity", exact: true }).check();
 
-  await expect(page.locator("article")).toHaveCount(1);
+  await expect(page.locator("article")).toHaveCount(5);
   await expect(
     page.locator("article").filter({ hasText: "California State University" }),
   ).toHaveCount(0);
@@ -29,16 +29,16 @@ test("discipline filter narrows the program list", async ({ page }) => {
   ).toHaveCount(1);
 
   const summary = await readSummary(page);
-  expect(summary).toEqual({ shown: 1, total: TOTAL_PROGRAMS });
+  expect(summary).toEqual({ shown: 5, total: TOTAL_PROGRAMS });
 });
 
 test("budget quick filter keeps every program under $25,000", async ({ page }) => {
   await page.getByRole("button", { name: /Budget Friendly/ }).click();
 
-  await expect(page.locator("article")).toHaveCount(3);
+  await expect(page.locator("article")).toHaveCount(6);
 
   const summary = await readSummary(page);
-  expect(summary).toEqual({ shown: 3, total: TOTAL_PROGRAMS });
+  expect(summary).toEqual({ shown: 6, total: TOTAL_PROGRAMS });
 });
 
 test("compare opens a modal with two columns and restores focus on Escape", async ({ page }) => {
@@ -103,7 +103,7 @@ test.describe("mobile layout", () => {
     await doneButton.click();
 
     await expect(doneButton).toBeHidden();
-    await expect(page.locator("article")).toHaveCount(1);
+    await expect(page.locator("article")).toHaveCount(5);
     await expect(page.getByRole("button", { name: "Filters" })).toBeVisible();
   });
 });
