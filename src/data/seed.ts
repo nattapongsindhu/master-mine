@@ -63,6 +63,21 @@ const basePrograms: Program[] = [
     greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-05-31" }, deadlineNote: "classes start 2027-08-23", verificationStatus: "Needs Review", sourceLastChecked: "2026-11-13"
   },
   {
+    id: "csun-ms-computer-science",
+    university: "California State University, Northridge",
+    programName: "Master of Science in Computer Science",
+    degree: "M.S. Computer Science",
+    disciplines: ["Computer Science"],
+    format: "On-Campus", city: "Northridge", state: "CA", totalTuitionUsd: 17096, tuitionIsEstimated: true,
+    fundingTypes: ["None"], usNewsRank: null, rankingTier: "Not Ranked",
+    rankingSource: "Not Ranked", accreditationType: "Regional Accreditation",
+    accreditationAgency: "WSCUC", carnegieClass: "Master's",
+    qualityBadges: ["No statement of purpose", "GRE waiver for ABET CS", "CA resident tuition"],
+    admissionRequirements: ["GPA 3.0 (2.5-3.0 considered by special action)", "GRE required; waived for ABET-accredited CS graduates with GPA 3.0 or higher", "Prerequisites: calculus I-II, programming, data structures, discrete structures, computer organization, operating systems, automata, algorithms", "Applied through Cal State Apply; English proficiency requirement: confirm with the university"],
+    sourceUrl: "https://www.csun.edu/engineering-computer-science/computer-science/programs/graduate-programs/ms-computer-science", tuitionNote: "$4,274 tuition per semester at 6.1+ units (California resident), about $17,096 over two years; campus fees extra.", lastVerified: "2026-11",
+    greRequirement: "Required", intakes: ["Fall"], verificationStatus: "Needs Review", sourceLastChecked: "2026-11-13"
+  },
+  {
     id: "utexas-ms-cso",
     university: "The University of Texas at Austin",
     programName: "Online Master of Science in Computer Science",

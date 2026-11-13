@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const TOTAL_PROGRAMS = 11;
+const TOTAL_PROGRAMS = 12;
 const FAVORITES_KEY = "masterpath-favorites";
 
 async function readSummary(page: Page) {
@@ -35,10 +35,10 @@ test("discipline filter narrows the program list", async ({ page }) => {
 test("budget quick filter keeps every program under $25,000", async ({ page }) => {
   await page.getByRole("button", { name: /Budget Friendly/ }).click();
 
-  await expect(page.locator("article")).toHaveCount(6);
+  await expect(page.locator("article")).toHaveCount(7);
 
   const summary = await readSummary(page);
-  expect(summary).toEqual({ shown: 6, total: TOTAL_PROGRAMS });
+  expect(summary).toEqual({ shown: 7, total: TOTAL_PROGRAMS });
 });
 
 test("compare opens a modal with two columns and restores focus on Escape", async ({ page }) => {
