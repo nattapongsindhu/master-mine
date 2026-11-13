@@ -15,7 +15,7 @@ const basePrograms: Program[] = [
     accreditationAgency: "SACSCOC", carnegieClass: "R1",
     qualityBadges: ["US News Top 50", "No GRE/GMAT", "No credential evaluation"],
     admissionRequirements: ["Bachelor's degree; transcripts with certified translation", "Probability and statistics, Python, and calculus plus linear algebra (or a study plan)", "Three letters of recommendation, resume, and essay", "TOEFL 100 (20+ per section) or IELTS 7.5"],
-    sourceUrl: "https://pe.gatech.edu/degrees/oms-analytics", tuitionNote: "36 credits at $343/credit plus $212-531 per-term online fees and a $95-105 application fee.", lastVerified: "2026-11",
+    sourceUrl: "https://pe.gatech.edu/degrees/analytics", tuitionNote: "36 credits at $343/credit plus $212-531 per-term online fees and a $95-105 application fee.", lastVerified: "2026-11",
     languageRequirements: { ielts: "7.5", toefl: "100" }, greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-02-01" }, deadlineNote: "final deadline 2027-03-15", verificationStatus: "Estimated", sourceLastChecked: "2026-11-13"
   },
   {
@@ -30,7 +30,7 @@ const basePrograms: Program[] = [
     accreditationAgency: "SACSCOC", carnegieClass: "R1",
     qualityBadges: ["US News Top 50", "Policy track", "No GRE/GMAT"],
     admissionRequirements: ["Bachelor's degree in business, economics, policy, or a related field", "1-2 years of IT or network operations experience", "One computer science or programming course; GPA 3.0 or higher", "TOEFL 100 (20+ per section) or IELTS 7.5"],
-    sourceUrl: "https://pe.gatech.edu/degrees/oms-cybersecurity", tuitionNote: "32 credits at $387/credit plus $212-531 per-term online fees and a $95-105 application fee.", lastVerified: "2026-11",
+    sourceUrl: "https://pe.gatech.edu/degrees/cybersecurity", tuitionNote: "32 credits at $387/credit plus $212-531 per-term online fees and a $95-105 application fee.", lastVerified: "2026-11",
     languageRequirements: { ielts: "7.5", toefl: "100" }, greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-02-01" }, deadlineNote: "final deadline 2027-03-15", verificationStatus: "Estimated", sourceLastChecked: "2026-11-13"
   },
   {
