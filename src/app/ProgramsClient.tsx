@@ -11,7 +11,7 @@ import { getSelectedPrograms } from "@/lib/comparison";
 import { getFavoritesServerSnapshot, getFavoritesSnapshot, parseFavoriteIds, subscribeFavorites, writeFavorites } from "@/lib/favorites";
 
 export interface ProgramFilters { query: string; disciplines: Discipline[]; formats: StudyFormat[]; funding: FundingType[]; rankingTiers: RankingTier[]; carnegieClasses: CarnegieClass[]; maxTuition: number; regionalOnly: boolean; greNotRequired: boolean; }
-const DEFAULT_FILTERS: ProgramFilters = { query: "", disciplines: [], formats: [], funding: [], rankingTiers: ["Top 200"], carnegieClasses: [], maxTuition: 100000, regionalOnly: true, greNotRequired: false };
+const DEFAULT_FILTERS: ProgramFilters = { query: "", disciplines: [], formats: [], funding: [], rankingTiers: ["Top 200", "Not Ranked"], carnegieClasses: [], maxTuition: 100000, regionalOnly: true, greNotRequired: false };
 
 export default function ProgramsClient({ programs }: { programs: Program[] }) {
   const [filters, setFilters] = useState<ProgramFilters>(DEFAULT_FILTERS);

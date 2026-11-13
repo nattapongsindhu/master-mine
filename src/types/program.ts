@@ -7,9 +7,10 @@ export type Discipline =
   | "Health Informatics" | "Bioinformatics" | "Robotics" | "FinTech" | "Information Technology";
 export type StudyFormat = "Online" | "On-Campus" | "Hybrid";
 export type FundingType = "Scholarship Available" | "TA/RA Funding" | "Fellowship" | "None";
-export type RankingTier = "Top 50" | "Top 100" | "Top 200";
+export type RankingTier = "Top 50" | "Top 100" | "Top 200" | "Not Ranked";
 export type VerificationStatus = "Verified" | "Estimated" | "Needs Review";
-export type CarnegieClass = "R1" | "R2" | "Doctoral/Professional";
+export type CarnegieClass = "R1" | "R2" | "Doctoral/Professional" | "Master's";
+export type RankingSource = "US News National Universities" | "CSRankings" | "Not Ranked";
 
 export interface Program {
   id: string;
@@ -23,9 +24,9 @@ export interface Program {
   totalTuitionUsd: number;
   tuitionIsEstimated: boolean;
   fundingTypes: FundingType[];
-  usNewsRank: number;
+  usNewsRank: number | null;
   rankingTier: RankingTier;
-  rankingSource: "US News National Universities" | "CSRankings";
+  rankingSource: RankingSource;
   accreditationType: string;
   accreditationAgency: string;
   carnegieClass: CarnegieClass;
@@ -38,6 +39,7 @@ export interface Program {
   greRequirement?: "Required" | "Optional" | "Not Required" | "Unknown";
   intakes?: ("Fall" | "Spring" | "Summer")[];
   applicationDeadlines?: { fall?: string; spring?: string; summer?: string };
+  deadlineNote?: string;
   verificationStatus?: VerificationStatus;
   sourceLastChecked?: string;
 }

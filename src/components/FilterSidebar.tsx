@@ -12,8 +12,8 @@ const disciplineGroups: { name: string; values: Discipline[] }[] = [
 ];
 const formats: StudyFormat[] = ["Online", "On-Campus", "Hybrid"];
 const funding: FundingType[] = ["Scholarship Available", "TA/RA Funding", "Fellowship", "None"];
-const tiers: RankingTier[] = ["Top 50", "Top 100", "Top 200"];
-const carnegieClasses: CarnegieClass[] = ["R1", "R2", "Doctoral/Professional"];
+const tiers: RankingTier[] = ["Top 50", "Top 100", "Top 200", "Not Ranked"];
+const carnegieClasses: CarnegieClass[] = ["R1", "R2", "Doctoral/Professional", "Master's"];
 type Props = { filters: ProgramFilters; setFilter: <K extends keyof ProgramFilters>(key: K, value: ProgramFilters[K]) => void; reset: () => void };
 
 export default function FilterSidebar({ filters, setFilter, reset }: Props) {

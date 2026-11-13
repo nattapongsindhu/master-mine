@@ -28,7 +28,7 @@ export default function ComparisonModal({ programs, onClose }: { programs: Progr
   const getValue = (row: typeof ROWS[number], program: Program): string => {
     if (row === "University") return program.university;
     if (row === "Program") return program.programName;
-    if (row === "Ranking") return `${program.rankingTier} (#${program.usNewsRank})`;
+    if (row === "Ranking") return program.usNewsRank === null ? "Not ranked nationally" : `${program.rankingTier} (#${program.usNewsRank})`;
     if (row === "Total tuition") return `$${program.totalTuitionUsd.toLocaleString()}${program.tuitionIsEstimated ? " (est.)" : ""}`;
     if (row === "Format") return program.format;
     if (row === "Accreditation") return `${program.accreditationAgency} · ${program.carnegieClass}`;

@@ -25,6 +25,15 @@ describe("ranking and accreditation", () => {
     expect(matchesRankingTier(201, ["Top 200"])).toBe(false);
   });
 
+  it("keeps unranked programs behind the Not Ranked tier", () => {
+    expect(matchesRankingTier(null, ["Top 200", "Not Ranked"])).toBe(true);
+    expect(matchesRankingTier(null, ["Top 200"])).toBe(false);
+    expect(matchesRankingTier(null, [])).toBe(true);
+    expect(matchesRankingTier(33, ["Top 200", "Not Ranked"])).toBe(true);
+    expect(matchesRankingTier(33, ["Not Ranked"])).toBe(false);
+    expect(matchesRankingTier(undefined, ["Top 200", "Not Ranked"])).toBe(false);
+  });
+
   it("normalizes regional accreditation values", () => {
     expect(matchesRegionalAccreditation(" Regional Accreditation ")).toBe(true);
     expect(matchesRegionalAccreditation("national accreditation")).toBe(false);

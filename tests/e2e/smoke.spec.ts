@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const TOTAL_PROGRAMS = 8;
+const TOTAL_PROGRAMS = 3;
 const FAVORITES_KEY = "masterpath-favorites";
 
 async function readSummary(page: Page) {
@@ -20,40 +20,35 @@ test.beforeEach(async ({ page }) => {
 test("discipline filter narrows the program list", async ({ page }) => {
   await page.getByRole("checkbox", { name: "Cybersecurity", exact: true }).check();
 
-  await expect(page.locator("article")).toHaveCount(4);
+  await expect(page.locator("article")).toHaveCount(1);
   await expect(
-    page.locator("article").filter({ hasText: "Purdue University" }),
+    page.locator("article").filter({ hasText: "California State University" }),
   ).toHaveCount(0);
   await expect(
-    page.locator("article").filter({ hasText: "Georgia Institute of Technology" }),
+    page.locator("article").filter({ hasText: "Policy Track" }),
   ).toHaveCount(1);
 
   const summary = await readSummary(page);
-  expect(summary).toEqual({ shown: 4, total: TOTAL_PROGRAMS });
+  expect(summary).toEqual({ shown: 1, total: TOTAL_PROGRAMS });
 });
 
-test("budget quick filter uses strict less-than on tuition", async ({ page }) => {
+test("budget quick filter keeps every program under $25,000", async ({ page }) => {
   await page.getByRole("button", { name: /Budget Friendly/ }).click();
 
   await expect(page.locator("article")).toHaveCount(3);
-  await expect(
-    page.locator("article").filter({ hasText: "Purdue University" }),
-  ).toHaveCount(0);
-  await expect(
-    page.locator("article").filter({ hasText: "Georgia Institute of Technology" }),
-  ).toHaveCount(1);
 
   const summary = await readSummary(page);
   expect(summary).toEqual({ shown: 3, total: TOTAL_PROGRAMS });
 });
 
 test("compare opens a modal with two columns and restores focus on Escape", async ({ page }) => {
-  await page
-    .getByRole("checkbox", { name: "Add Georgia Institute of Technology to comparison" })
-    .check();
-  await page
-    .getByRole("checkbox", { name: "Add Purdue University to comparison" })
-    .check();
+  const analytics = page.locator("article").filter({ hasText: "OMS Analytics" });
+  const csula = page
+    .locator("article")
+    .filter({ hasText: "California State University, Los Angeles" });
+
+  await analytics.getByRole("checkbox").check();
+  await csula.getByRole("checkbox").check();
 
   await expect(page.getByText("2/3", { exact: true })).toBeVisible();
 
@@ -67,7 +62,10 @@ test("compare opens a modal with two columns and restores focus on Escape", asyn
     dialog.getByRole("heading", { name: "Your shortlisted programs" }),
   ).toBeVisible();
   await expect(dialog.getByText("Georgia Institute of Technology", { exact: true })).toBeVisible();
-  await expect(dialog.getByText("Purdue University", { exact: true })).toBeVisible();
+  await expect(
+    dialog.getByText("California State University, Los Angeles", { exact: true }),
+  ).toBeVisible();
+  await expect(dialog.getByText("Not ranked nationally", { exact: true })).toBeVisible();
 
   await page.keyboard.press("Escape");
   await expect(dialog).toBeHidden();
@@ -75,24 +73,20 @@ test("compare opens a modal with two columns and restores focus on Escape", asyn
 });
 
 test("favorite persists across reload", async ({ page }) => {
-  const card = page
-    .locator("article")
-    .filter({ hasText: "Georgia Institute of Technology" });
+  const card = page.locator("article").filter({ hasText: "OMS Analytics" });
 
   await card.getByRole("button", { name: "Save program" }).click();
   await expect(card.getByRole("button", { name: "Remove from favorites" })).toBeVisible();
 
   const stored = await page.evaluate((key) => window.localStorage.getItem(key), FAVORITES_KEY);
-  expect(stored).toContain("gatech-omscs");
+  expect(stored).toContain("gatech-oms-analytics");
 
   await page.reload();
   await page.waitForLoadState("networkidle");
 
-  const reloadedCard = page
-    .locator("article")
-    .filter({ hasText: "Georgia Institute of Technology" });
+  const reloadedCard = page.locator("article").filter({ hasText: "OMS Analytics" });
   await expect(
-    reloadedCard.getByRole("button", { name: "Remove from favorites" }),
+    reloadedCard.getByRole("button", { name: "Remove from favorites" })
   ).toBeVisible();
 });
 
@@ -109,7 +103,7 @@ test.describe("mobile layout", () => {
     await doneButton.click();
 
     await expect(doneButton).toBeHidden();
-    await expect(page.locator("article")).toHaveCount(4);
+    await expect(page.locator("article")).toHaveCount(1);
     await expect(page.getByRole("button", { name: "Filters" })).toBeVisible();
   });
 });

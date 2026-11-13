@@ -5,7 +5,7 @@
 [![React](https://img.shields.io/badge/React-19.3.1-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.17-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Vitest](https://img.shields.io/badge/tests-21_unit-6E9F18?logo=vitest&logoColor=white)](#local-setup)
+[![Vitest](https://img.shields.io/badge/tests-25_unit-6E9F18?logo=vitest&logoColor=white)](#local-setup)
 [![Playwright](https://img.shields.io/badge/tests-5_e2e-2EAD33?logo=playwright&logoColor=white)](#local-setup)
 
 **Live:** https://master-mine.vercel.app
