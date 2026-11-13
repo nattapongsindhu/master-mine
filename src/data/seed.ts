@@ -34,6 +34,20 @@ const basePrograms: Program[] = [
     languageRequirements: { ielts: "7.5", toefl: "100" }, greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-02-01" }, deadlineNote: "final deadline 2027-03-15", verificationStatus: "Estimated", sourceLastChecked: "2026-11-13"
   },
   {
+    id: "gatech-omscs",
+    university: "Georgia Institute of Technology",
+    programName: "Online Master of Science in Computer Science (OMSCS)",
+    degree: "M.S. Computer Science",
+    disciplines: ["Computer Science", "Data Science", "Cybersecurity"],
+    format: "Online", totalTuitionUsd: 7000, tuitionIsEstimated: true,
+    fundingTypes: ["None"], usNewsRank: 33, rankingTier: "Top 50",
+    rankingSource: "US News National Universities", accreditationType: "Regional Accreditation",
+    accreditationAgency: "SACSCOC", carnegieClass: "R1",
+    qualityBadges: ["US News Top 50", "R1 Research University"],
+    admissionRequirements: ["Bachelor's degree", "Transcripts", "Statement of purpose", "English proficiency if applicable"],
+    sourceUrl: "https://omscs.gatech.edu/", tuitionNote: "Estimated program tuition; verify current per-credit fees with Georgia Tech.", lastVerified: "2026-11"
+  },
+  {
     id: "csula-ms-computer-science",
     university: "California State University, Los Angeles",
     programName: "Master of Science in Computer Science",
@@ -47,20 +61,6 @@ const basePrograms: Program[] = [
     admissionRequirements: ["GPA 3.0 (2.5-2.99 considered by special action)", "Up to three prerequisites from the department's six-course pool", "IERF or WES credential evaluation", "English proficiency requirement: confirm with the department"],
     sourceUrl: "https://www.calstatela.edu/academic/ecst/cs", tuitionNote: "30 units; $9,648 per year California resident graduate tuition, about $19,296 over two years.", lastVerified: "2026-11",
     greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-05-31" }, deadlineNote: "classes start 2027-08-23", verificationStatus: "Needs Review", sourceLastChecked: "2026-11-13"
-  },
-  {
-    id: "gatech-omscs",
-    university: "Georgia Institute of Technology",
-    programName: "Online Master of Science in Computer Science (OMSCS)",
-    degree: "M.S. Computer Science",
-    disciplines: ["Computer Science", "Data Science", "Cybersecurity"],
-    format: "Online", totalTuitionUsd: 7000, tuitionIsEstimated: true,
-    fundingTypes: ["None"], usNewsRank: 33, rankingTier: "Top 50",
-    rankingSource: "US News National Universities", accreditationType: "Regional Accreditation",
-    accreditationAgency: "SACSCOC", carnegieClass: "R1",
-    qualityBadges: ["US News Top 50", "R1 Research University"],
-    admissionRequirements: ["Bachelor's degree", "Transcripts", "Statement of purpose", "English proficiency if applicable"],
-    sourceUrl: "https://omscs.gatech.edu/", tuitionNote: "Estimated program tuition; verify current per-credit fees with Georgia Tech.", lastVerified: "2026-11"
   },
   {
     id: "utexas-ms-cso",
