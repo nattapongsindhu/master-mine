@@ -4,6 +4,51 @@ import type { Program } from "@/types/program";
 // be re-verified against the university and ranking publisher before production.
 const basePrograms: Program[] = [
   {
+    id: "gatech-oms-analytics",
+    university: "Georgia Institute of Technology",
+    programName: "Online Master of Science in Analytics (OMS Analytics)",
+    degree: "M.S. Analytics",
+    disciplines: ["Data Analytics", "Data Science"],
+    format: "Online", totalTuitionUsd: 12348, tuitionIsEstimated: true,
+    fundingTypes: ["None"], usNewsRank: 33, rankingTier: "Top 50",
+    rankingSource: "US News National Universities", accreditationType: "Regional Accreditation",
+    accreditationAgency: "SACSCOC", carnegieClass: "R1",
+    qualityBadges: ["US News Top 50", "No GRE/GMAT", "No credential evaluation"],
+    admissionRequirements: ["Bachelor's degree; transcripts with certified translation", "Probability and statistics, Python, and calculus plus linear algebra (or a study plan)", "Three letters of recommendation, resume, and essay", "TOEFL 100 (20+ per section) or IELTS 7.5"],
+    sourceUrl: "https://pe.gatech.edu/degrees/oms-analytics", tuitionNote: "36 credits at $343/credit plus $212-531 per-term online fees and a $95-105 application fee.", lastVerified: "2026-11",
+    languageRequirements: { ielts: "7.5", toefl: "100" }, greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-02-01" }, deadlineNote: "final deadline 2027-03-15", verificationStatus: "Estimated", sourceLastChecked: "2026-11-13"
+  },
+  {
+    id: "gatech-oms-cybersecurity",
+    university: "Georgia Institute of Technology",
+    programName: "Online Master of Science in Cybersecurity (Policy Track)",
+    degree: "M.S. Cybersecurity",
+    disciplines: ["Cybersecurity", "IT Management"],
+    format: "Online", totalTuitionUsd: 12384, tuitionIsEstimated: true,
+    fundingTypes: ["None"], usNewsRank: 33, rankingTier: "Top 50",
+    rankingSource: "US News National Universities", accreditationType: "Regional Accreditation",
+    accreditationAgency: "SACSCOC", carnegieClass: "R1",
+    qualityBadges: ["US News Top 50", "Policy track", "No GRE/GMAT"],
+    admissionRequirements: ["Bachelor's degree in business, economics, policy, or a related field", "1-2 years of IT or network operations experience", "One computer science or programming course; GPA 3.0 or higher", "TOEFL 100 (20+ per section) or IELTS 7.5"],
+    sourceUrl: "https://pe.gatech.edu/degrees/oms-cybersecurity", tuitionNote: "32 credits at $387/credit plus $212-531 per-term online fees and a $95-105 application fee.", lastVerified: "2026-11",
+    languageRequirements: { ielts: "7.5", toefl: "100" }, greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-02-01" }, deadlineNote: "final deadline 2027-03-15", verificationStatus: "Estimated", sourceLastChecked: "2026-11-13"
+  },
+  {
+    id: "csula-ms-computer-science",
+    university: "California State University, Los Angeles",
+    programName: "Master of Science in Computer Science",
+    degree: "M.S. Computer Science",
+    disciplines: ["Computer Science", "Software Engineering"],
+    format: "On-Campus", city: "Los Angeles", state: "CA", totalTuitionUsd: 19296, tuitionIsEstimated: true,
+    fundingTypes: ["None"], usNewsRank: null, rankingTier: "Not Ranked",
+    rankingSource: "Not Ranked", accreditationType: "Regional Accreditation",
+    accreditationAgency: "WSCUC", carnegieClass: "Master's",
+    qualityBadges: ["No GRE", "No letters of recommendation", "CA resident tuition"],
+    admissionRequirements: ["GPA 3.0 (2.5-2.99 considered by special action)", "Up to three prerequisites from the department's six-course pool", "IERF or WES credential evaluation", "English proficiency requirement: confirm with the department"],
+    sourceUrl: "https://www.calstatela.edu/academic/ecst/cs", tuitionNote: "30 units; $9,648 per year California resident graduate tuition, about $19,296 over two years.", lastVerified: "2026-11",
+    greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-05-31" }, deadlineNote: "classes start 2027-08-23", verificationStatus: "Needs Review", sourceLastChecked: "2026-11-13"
+  },
+  {
     id: "gatech-omscs",
     university: "Georgia Institute of Technology",
     programName: "Online Master of Science in Computer Science (OMSCS)",
@@ -106,51 +151,6 @@ const basePrograms: Program[] = [
     qualityBadges: ["US News Top 50", "R1 Research University"],
     admissionRequirements: ["Bachelor's degree", "Programming and mathematics background", "Transcripts", "Three recommendations"],
     sourceUrl: "https://www.cs.columbia.edu/education/ms/", tuitionNote: "Estimated total tuition excluding living costs; verify Columbia's current rates.", lastVerified: "2026-11"
-  },
-  {
-    id: "gatech-oms-analytics",
-    university: "Georgia Institute of Technology",
-    programName: "Online Master of Science in Analytics (OMS Analytics)",
-    degree: "M.S. Analytics",
-    disciplines: ["Data Analytics", "Data Science"],
-    format: "Online", totalTuitionUsd: 12348, tuitionIsEstimated: true,
-    fundingTypes: ["None"], usNewsRank: 33, rankingTier: "Top 50",
-    rankingSource: "US News National Universities", accreditationType: "Regional Accreditation",
-    accreditationAgency: "SACSCOC", carnegieClass: "R1",
-    qualityBadges: ["US News Top 50", "No GRE/GMAT", "No credential evaluation"],
-    admissionRequirements: ["Bachelor's degree; transcripts with certified translation", "Probability and statistics, Python, and calculus plus linear algebra (or a study plan)", "Three letters of recommendation, resume, and essay", "TOEFL 100 (20+ per section) or IELTS 7.5"],
-    sourceUrl: "https://pe.gatech.edu/degrees/oms-analytics", tuitionNote: "36 credits at $343/credit plus $212-531 per-term online fees and a $95-105 application fee.", lastVerified: "2026-11",
-    languageRequirements: { ielts: "7.5", toefl: "100" }, greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-02-01" }, deadlineNote: "final deadline 2027-03-15", verificationStatus: "Estimated", sourceLastChecked: "2026-11-13"
-  },
-  {
-    id: "gatech-oms-cybersecurity",
-    university: "Georgia Institute of Technology",
-    programName: "Online Master of Science in Cybersecurity (Policy Track)",
-    degree: "M.S. Cybersecurity",
-    disciplines: ["Cybersecurity", "IT Management"],
-    format: "Online", totalTuitionUsd: 12384, tuitionIsEstimated: true,
-    fundingTypes: ["None"], usNewsRank: 33, rankingTier: "Top 50",
-    rankingSource: "US News National Universities", accreditationType: "Regional Accreditation",
-    accreditationAgency: "SACSCOC", carnegieClass: "R1",
-    qualityBadges: ["US News Top 50", "Policy track", "No GRE/GMAT"],
-    admissionRequirements: ["Bachelor's degree in business, economics, policy, or a related field", "1-2 years of IT or network operations experience", "One computer science or programming course; GPA 3.0 or higher", "TOEFL 100 (20+ per section) or IELTS 7.5"],
-    sourceUrl: "https://pe.gatech.edu/degrees/oms-cybersecurity", tuitionNote: "32 credits at $387/credit plus $212-531 per-term online fees and a $95-105 application fee.", lastVerified: "2026-11",
-    languageRequirements: { ielts: "7.5", toefl: "100" }, greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-02-01" }, deadlineNote: "final deadline 2027-03-15", verificationStatus: "Estimated", sourceLastChecked: "2026-11-13"
-  },
-  {
-    id: "csula-ms-computer-science",
-    university: "California State University, Los Angeles",
-    programName: "Master of Science in Computer Science",
-    degree: "M.S. Computer Science",
-    disciplines: ["Computer Science", "Software Engineering"],
-    format: "On-Campus", city: "Los Angeles", state: "CA", totalTuitionUsd: 19296, tuitionIsEstimated: true,
-    fundingTypes: ["None"], usNewsRank: null, rankingTier: "Not Ranked",
-    rankingSource: "Not Ranked", accreditationType: "Regional Accreditation",
-    accreditationAgency: "WSCUC", carnegieClass: "Master's",
-    qualityBadges: ["No GRE", "No letters of recommendation", "CA resident tuition"],
-    admissionRequirements: ["GPA 3.0 (2.5-2.99 considered by special action)", "Up to three prerequisites from the department's six-course pool", "IERF or WES credential evaluation", "English proficiency requirement: confirm with the department"],
-    sourceUrl: "https://www.calstatela.edu/academic/ecst/cs", tuitionNote: "30 units; $9,648 per year California resident graduate tuition, about $19,296 over two years.", lastVerified: "2026-11",
-    greRequirement: "Not Required", intakes: ["Fall"], applicationDeadlines: { fall: "2027-05-31" }, deadlineNote: "classes start 2027-08-23", verificationStatus: "Needs Review", sourceLastChecked: "2026-11-13"
   }
 ];
 
